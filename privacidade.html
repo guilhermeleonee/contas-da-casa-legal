@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de Privacidade — Contas da Casa</title>
+<style>
+  :root { color-scheme: light; }
+  body {
+    margin: 0 auto; padding: 32px 20px 96px; max-width: 42rem;
+    background: #FBF7F0; color: #1C1A17;
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  h1 { font-size: 1.7rem; line-height: 1.2; margin: 0 0 4px; }
+  h2 { font-size: 1.15rem; margin: 40px 0 8px; }
+  .meta { color: #6E6862; font-size: .85rem; margin-bottom: 32px; }
+  a { color: #2E5D4B; }
+  ul { padding-left: 1.2rem; }
+  li { margin: 6px 0; }
+  code { background: #F3EDE3; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: .93rem; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #E3DCD1; vertical-align: top; }
+  th { color: #6E6862; font-weight: 600; }
+  .destaque { background: #F3EDE3; border-left: 3px solid #2E5D4B; padding: 12px 16px; margin: 20px 0; }
+  footer { margin-top: 56px; padding-top: 16px; border-top: 1px solid #E3DCD1; color: #6E6862; font-size: .85rem; }
+</style>
+</head>
+<body>
+
+<h1>Política de Privacidade</h1>
+<p class="meta">Contas da Casa · Vigente desde 10 de agosto de 2026 · Versão 1.0</p>
+
+<div class="destaque">
+  <strong>O resumo honesto:</strong> o Contas da Casa não pede o login do seu banco, não usa Open
+  Finance e não tem rastreamento nem publicidade. Você digita suas contas e, se quiser, importa o
+  PDF da fatura do cartão. O PDF é lido na memória do servidor e descartado na hora — só as
+  transações estruturadas ficam guardadas, na sua conta.
+</div>
+
+<h2>1. Quem é o responsável</h2>
+<p>
+  Guilherme Leone, pessoa física, é o controlador dos dados tratados pelo aplicativo
+  <strong>Contas da Casa</strong> e atua também como encarregado (DPO) para os fins do art. 41 da
+  LGPD. Contato para qualquer assunto desta política, incluindo o exercício dos seus direitos:
+  <a href="mailto:guilhermeleone@gmail.com">guilhermeleone@gmail.com</a>.
+</p>
+
+<h2>2. Que dados o aplicativo trata</h2>
+<table>
+  <tr><th>Dado</th><th>Para quê</th><th>Base legal (LGPD)</th></tr>
+  <tr>
+    <td>E-mail</td>
+    <td>Identificar sua conta e permitir o login. Se você usar o Sign in with Apple e escolher
+        ocultar o e-mail, recebemos apenas o endereço de redirecionamento da Apple
+        (<code>@privaterelay.appleid.com</code>) — o seu e-mail real nunca chega até nós.</td>
+    <td>Execução de contrato (art. 7º, V)</td>
+  </tr>
+  <tr>
+    <td>Nome de exibição</td>
+    <td>Mostrar quem é responsável por cada conta dentro da casa. É o que você digitar; o padrão é
+        a parte do e-mail antes do <code>@</code>.</td>
+    <td>Execução de contrato</td>
+  </tr>
+  <tr>
+    <td>Contas que você lança</td>
+    <td>Descrição, valor, vencimento, categoria, responsável, observação e se está paga. É o
+        conteúdo do aplicativo.</td>
+    <td>Execução de contrato</td>
+  </tr>
+  <tr>
+    <td>Faturas importadas</td>
+    <td>Data, descrição do estabelecimento e valor de cada lançamento, mais o total e o vencimento
+        da fatura. Usados para categorizar gastos e baixar contas automaticamente.</td>
+    <td>Execução de contrato</td>
+  </tr>
+  <tr>
+    <td>Suas correções de categoria</td>
+    <td>Quando você corrige a categoria de um lançamento, guardamos a associação
+        (estabelecimento → categoria) para acertar da próxima vez.</td>
+    <td>Legítimo interesse (art. 7º, IX) — melhorar o serviço para o próprio titular</td>
+  </tr>
+</table>
+
+<h2>3. Que dados o aplicativo <em>não</em> trata</h2>
+<ul>
+  <li>Nenhuma credencial bancária. O app não se conecta ao seu banco e não usa Open Finance.</li>
+  <li>Número de cartão, CPF, RG, endereço, telefone, data de nascimento.</li>
+  <li>Localização, contatos, agenda, fotos, microfone, câmera.</li>
+  <li>Identificadores de publicidade (IDFA). Não há rastreamento entre aplicativos ou sites, nem
+      SDK de anúncios, nem ferramenta de analytics de terceiros.</li>
+</ul>
+
+<h2>4. O PDF da fatura</h2>
+<p>
+  Ao importar uma fatura, o arquivo é enviado por conexão criptografada (HTTPS) a uma função de
+  servidor que extrai o texto, identifica os lançamentos e devolve a lista estruturada.
+  <strong>O arquivo não é gravado em disco, banco de dados ou backup</strong> — ele existe apenas na
+  memória durante o processamento, que dura segundos, e é descartado ao final. O que é armazenado é
+  somente o resultado: data, descrição e valor de cada lançamento, dentro da sua conta.
+</p>
+
+<h2>5. Uso de inteligência artificial</h2>
+<p>
+  O aplicativo tenta casar cada conta cadastrada com o lançamento correspondente na fatura. Quando o
+  nome não bate por comparação simples (por exemplo, a conta “Aluguel” e o lançamento
+  “IMOB PRIME LTDA”), o app envia <strong>somente esses pares em dúvida</strong> para a API da
+  Anthropic, que responde com um grau de confiança e uma justificativa de uma frase.
+</p>
+<ul>
+  <li>É enviado: a descrição da conta, a descrição do lançamento e os dois valores.</li>
+  <li>Não é enviado: o PDF, seu e-mail, seu nome, o identificador da sua conta, nem o restante da
+      fatura.</li>
+  <li>Conforme os termos comerciais da Anthropic, dados enviados pela API não são usados para
+      treinar modelos.</li>
+  <li>Sua resposta (“é a mesma coisa” ou “não é”) fica guardada na sua conta, e o mesmo par nunca é
+      perguntado — nem enviado — de novo.</li>
+  <li>Se esse recurso estiver indisponível, o aplicativo continua funcionando com a comparação
+      local. A sugestão da IA nunca marca uma conta como paga sozinha: você confirma cada uma.</li>
+</ul>
+
+<h2>6. Notificações</h2>
+<p>
+  Os lembretes de vencimento são <strong>notificações locais</strong>, agendadas pelo próprio
+  aparelho. Nenhum dado sai do dispositivo para gerá-las e não há servidor de push. Você pode
+  desativá-las nos Ajustes do aplicativo ou do iOS.
+</p>
+
+<h2>7. Compartilhamento com outras pessoas</h2>
+<p>
+  O aplicativo foi feito para duas pessoas dividirem as contas da mesma casa. Ao entrar em uma casa,
+  os membros passam a ver e editar as contas, faturas e categorias daquela casa — essa é a função do
+  produto. Você pode sair da casa a qualquer momento pelos Ajustes; o histórico da casa permanece
+  com quem ficou.
+</p>
+<p>
+  Fora isso, seus dados não são vendidos, alugados nem compartilhados com terceiros para fins
+  comerciais. Os únicos operadores envolvidos são os do item 8.
+</p>
+
+<h2>8. Onde os dados ficam</h2>
+<p>
+  Os dados são armazenados em servidores no Brasil (região São Paulo), na infraestrutura da
+  Supabase, Inc., que atua como operadora. O acesso é isolado por regras de segurança em nível de
+  linha no banco: cada casa só enxerga os próprios registros.
+</p>
+<p>
+  Duas operações envolvem transferência internacional de dados (art. 33 da LGPD): o suporte técnico
+  da própria Supabase, sediada nos Estados Unidos, e o envio dos pares de reconciliação à API da
+  Anthropic, descrito no item 5. Ambas se limitam ao necessário para executar o serviço.
+</p>
+
+<h2>9. Por quanto tempo</h2>
+<p>
+  Seus dados ficam guardados enquanto sua conta existir. Ao excluir a conta, todos os registros —
+  contas, faturas, transações e categorias — são apagados imediatamente e de forma definitiva do
+  banco de dados, sem período de carência nem cópia de cortesia.
+</p>
+
+<h2>10. Seus direitos</h2>
+<p>Pela LGPD (art. 18), você pode pedir a qualquer momento: confirmação de tratamento, acesso,
+  correção, anonimização, portabilidade, eliminação e informação sobre compartilhamento.</p>
+<ul>
+  <li><strong>Excluir tudo, sem falar com ninguém:</strong> Ajustes → Excluir minha conta. Apaga
+      conta de acesso, contas a pagar, faturas, categorias e regras aprendidas.</li>
+  <li><strong>Exportar seus dados:</strong> Ajustes → Exportar meus dados. Gera um arquivo com tudo
+      o que está guardado na sua casa, pronto para compartilhar ou salvar.</li>
+  <li><strong>Demais pedidos:</strong> escreva para
+      <a href="mailto:guilhermeleone@gmail.com">guilhermeleone@gmail.com</a>. A resposta sai em até
+      15 dias.</li>
+</ul>
+
+<h2>11. Segurança</h2>
+<p>
+  Todo o tráfego usa HTTPS. A sessão fica guardada no chaveiro seguro do iOS (Keychain), não em
+  armazenamento comum. Não há senha para vazar: o login é por Sign in with Apple ou por código de
+  uso único enviado ao seu e-mail.
+</p>
+
+<h2>12. Crianças</h2>
+<p>O aplicativo não é direcionado a menores de 13 anos e não coleta dados dessa faixa etária
+  conscientemente.</p>
+
+<h2>13. Mudanças nesta política</h2>
+<p>
+  Se algo mudar, a nova versão é publicada nesta mesma página com a data de vigência atualizada.
+  Mudanças relevantes serão avisadas dentro do aplicativo antes de valerem.
+</p>
+
+<footer>Contas da Casa · Política de Privacidade v1.0 · 10/08/2026 ·
+  <a href="termos.html">Termos de Uso</a></footer>
+
+</body>
+</html>
