@@ -28,7 +28,7 @@
 <body>
 
 <h1>Política de Privacidade</h1>
-<p class="meta">Contas da Casa · Vigente desde 10 de agosto de 2026 · Versão 1.0</p>
+<p class="meta">Contas da Casa · Vigente desde 30 de setembro de 2026 · Versão 1.1</p>
 
 <div class="destaque">
   <strong>O resumo honesto:</strong> o Contas da Casa não pede o login do seu banco, não usa Open
@@ -74,6 +74,12 @@
     <td>Execução de contrato</td>
   </tr>
   <tr>
+    <td>Anexos que você escolhe</td>
+    <td>Foto ou PDF de boleto e comprovante que você anexa a uma conta. Só entram no aplicativo
+        quando você escolhe o arquivo ou tira a foto — o app não varre o seu rolo de fotos.</td>
+    <td>Execução de contrato</td>
+  </tr>
+  <tr>
     <td>Suas correções de categoria</td>
     <td>Quando você corrige a categoria de um lançamento, guardamos a associação
         (estabelecimento → categoria) para acertar da próxima vez.</td>
@@ -85,7 +91,13 @@
 <ul>
   <li>Nenhuma credencial bancária. O app não se conecta ao seu banco e não usa Open Finance.</li>
   <li>Número de cartão, CPF, RG, endereço, telefone, data de nascimento.</li>
-  <li>Localização, contatos, agenda, fotos, microfone, câmera.</li>
+  <li>Localização, contatos, agenda, microfone.</li>
+  <li>Seu rolo de fotos e sua câmera não são acessados por conta própria: o aplicativo só pede
+      essas permissões no momento em que você toca em “Anexar boleto ou comprovante”, “Ler
+      boleto” ou “Tirar foto do rascunho”, e recebe apenas o arquivo que você escolher ou a foto
+      que você tirar ali. A leitura do código de barras do boleto acontece inteira no seu
+      aparelho: nenhuma imagem da câmera é gravada ou enviada — só os dados lidos (valor,
+      vencimento, código) vão para a conta que você salvar.</li>
   <li>Identificadores de publicidade (IDFA). Não há rastreamento entre aplicativos ou sites, nem
       SDK de anúncios, nem ferramenta de analytics de terceiros.</li>
 </ul>
@@ -97,6 +109,20 @@
   <strong>O arquivo não é gravado em disco, banco de dados ou backup</strong> — ele existe apenas na
   memória durante o processamento, que dura segundos, e é descartado ao final. O que é armazenado é
   somente o resultado: data, descrição e valor de cada lançamento, dentro da sua conta.
+</p>
+
+<h2>4.1. Boletos e comprovantes anexados</h2>
+<p>
+  O anexo é o contrário do PDF da fatura: ele existe justamente para ficar guardado, porque foi
+  você quem pediu para guardá-lo. Ele fica em um espaço de armazenamento <strong>privado</strong>,
+  separado por casa — não existe link público para ele. Quando você abre o anexo, o aplicativo
+  gera na hora um endereço temporário que <strong>expira em 1 minuto</strong>; um link copiado
+  deixa de funcionar sozinho.
+</p>
+<p>
+  Quem divide a casa com você enxerga os anexos das contas da casa, como já enxerga as contas.
+  Remover o anexo em uma conta apaga o arquivo do servidor. Excluir sua conta apaga os anexos
+  junto com o resto.
 </p>
 
 <h2>5. Uso de inteligência artificial</h2>
@@ -116,6 +142,24 @@
       perguntado — nem enviado — de novo.</li>
   <li>Se esse recurso estiver indisponível, o aplicativo continua funcionando com a comparação
       local. A sugestão da IA nunca marca uma conta como paga sozinha: você confirma cada uma.</li>
+</ul>
+<p>
+  <strong>Análise do mês (“Conselheiro do mês”).</strong> Na aba Análise, o aplicativo aponta
+  cobranças repetidas, assinaturas, parcelas e categorias fora do normal. Essa detecção é feita
+  <strong>inteiramente no seu aparelho</strong> e não envia nada para lugar nenhum. Só se você
+  tocar no botão “Analisar este mês” — e confirmar o aviso que aparece antes — o app envia à API
+  da Anthropic um resumo para que ela escreva o texto da análise.
+</p>
+<ul>
+  <li>É enviado: o mês, o total gasto no cartão, o total do mês anterior, o valor que você mesmo
+      marcou como “podia ter ficado de fora” e as frases já apuradas no aparelho, que citam o nome
+      dos estabelecimentos envolvidos.</li>
+  <li>Não é enviado: o PDF, a fatura, a lista de lançamentos, seu e-mail, seu nome nem o
+      identificador da sua conta.</li>
+  <li>Os números da análise são calculados no aparelho, não pela IA — ela recebe os valores prontos
+      e tem instrução expressa de não estimar nem inventar nenhum.</li>
+  <li>Nada disso é guardado: o texto existe enquanto a tela está aberta e some quando você sai.</li>
+  <li>Se você nunca tocar nesse botão, nenhum dado da sua análise sai do aparelho.</li>
 </ul>
 
 <h2>6. Notificações</h2>
@@ -145,15 +189,15 @@
 </p>
 <p>
   Duas operações envolvem transferência internacional de dados (art. 33 da LGPD): o suporte técnico
-  da própria Supabase, sediada nos Estados Unidos, e o envio dos pares de reconciliação à API da
-  Anthropic, descrito no item 5. Ambas se limitam ao necessário para executar o serviço.
+  da própria Supabase, sediada nos Estados Unidos, e os envios à API da Anthropic descritos no
+  item 5 — os pares de reconciliação e, quando você pede, o resumo do mês para a análise. Ambas se
+  limitam ao necessário para executar o serviço.
 </p>
 
 <h2>9. Por quanto tempo</h2>
 <p>
-  Seus dados ficam guardados enquanto sua conta existir. Ao excluir a conta, todos os registros —
-  contas, faturas, transações e categorias — são apagados imediatamente e de forma definitiva do
-  banco de dados, sem período de carência nem cópia de cortesia.
+  Seus dados ficam guardados enquanto sua conta existir. Ao excluir a conta, tudo é apagado
+  imediatamente e de forma definitiva — não há período de carência nem cópia de cortesia.
 </p>
 
 <h2>10. Seus direitos</h2>
@@ -186,7 +230,7 @@
   Mudanças relevantes serão avisadas dentro do aplicativo antes de valerem.
 </p>
 
-<footer>Contas da Casa · Política de Privacidade v1.0 · 10/08/2026 ·
+<footer>Contas da Casa · Política de Privacidade v1.1 · 30/09/2026 ·
   <a href="termos.html">Termos de Uso</a></footer>
 
 </body>
